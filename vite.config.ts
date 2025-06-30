@@ -4,12 +4,10 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  root: '.', // keep root as current folder
-  publicDir: 'public', // tell Vite where to look for index.html and public assets
   build: {
-    outDir: 'dist', // output folder
+    outDir: 'dist',
     rollupOptions: {
-      input: path.resolve(__dirname, 'public/index.html'), // this is the FIX 👇
+      input: path.resolve(__dirname, 'index.html'), // ✅ correct path
     },
   },
 });
